@@ -8,7 +8,7 @@ The main functions are as follows:
 2. The real-time face detection program (using frontal_face_dtector interface) is based on five feature points.  
 3. The real-time feature point calibration program (using shape_predictor interface) is based on 68 feature points.  
 4. Programming of real-time feature point alignment (interface: get_face_chip).  
-5. Create a face database + real-time face comparison (face_recognition library is used for encoding).  This includes: 
+5. Create a face database + real-time face comparison (face_recognition library is used for encoding). This includes:   
    (1) making a face registry;  
    (2) real-time comparison based on video stream, and displaying the names of registered faces.  
 6. Real-time blinking behavior recognition.  
@@ -32,6 +32,6 @@ It combines blink recognition with real-time face comparison.
    这里包含①人脸注册库制作 ②基于视频流的实时比对，并且显示已注册人脸的名字。  
 6，实时眨眼行为识别。  
    加入了智能判断防止欺诈：  
-第一步检查眼睛纵横比是否低于我们的眨眼阈值，如果是，我们递增指示正在发生眨眼的连续帧数（即前面的闪烁阀值，这里设定为2，就是要求眨眼的速度不能过快）。否则，我们将处理眼高宽比不低于眨眼阈值的情况，我们对其进行检查，看看是否有足够数量的连续帧包含低于我们预先定义的阈值的眨眼率。如果检查通过，我们增加总的闪烁次数。然后我们重新设置连续闪烁次数 COUNTER。  
+   第一步检查眼睛纵横比是否低于我们的眨眼阈值，如果是，我们递增指示正在发生眨眼的连续帧数（即前面的闪烁阀值，这里设定为2，就是要求眨眼的速度不能过快）。否则，我们将处理眼高宽比不低于眨眼阈值的情况，我们对其进行检查，看看是否有足够数量的连续帧包含低于我们预先定义的阈值的眨眼率。如果检查通过，我们增加总的闪烁次数。然后我们重新设置连续闪烁次数 COUNTER。  
 
-同时提供了离线比对的代码，有待提高的地方，将眨眼识别与实时人脸比对结合。
+#### 同时提供了离线比对的代码，有待提高的地方，将眨眼识别与实时人脸比对结合。
