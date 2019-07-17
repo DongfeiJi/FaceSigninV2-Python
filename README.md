@@ -1,4 +1,22 @@
-# FaceSigninV2-Python
+# Introduce
+Face Check-in System Based on Dlib  
+Face check-in system is implemented based on machine learning/deep learning framework Dlib and OpenCV library.  
+Experimental platform: Pycharm.  
+This project uses Python for modular design.  
+The main functions are as follows:  
+1. Real-time video acquisition program design. There are two schemes: 1. opencv 2. opencv + dlib. These two schemes are the difference of windows.  
+2. The real-time face detection program (using frontal_face_dtector interface) is based on five feature points.  
+3. The real-time feature point calibration program (using shape_predictor interface) is based on 68 feature points.  
+4. Programming of real-time feature point alignment (interface: get_face_chip).  
+5. Create a face database + real-time face comparison (face_recognition library is used for encoding).  
+This includes: (1) making a face registry; (2) real-time comparison based on video stream, and displaying the names of registered faces.
+6. Real-time blinking behavior recognition.  
+Intelligent judgment is added to prevent fraud:  
+The first step is to check whether the aspect ratio of the eye is lower than our blink threshold. If so, we increment the number of consecutive frames indicating that blinking is occurring (that is, the previous blink threshold, set here to 2, which means that the blink speed should not be too fast). Otherwise, we will deal with the case where the aspect ratio of the eye is not lower than the blink threshold. We will check it to see if there are enough consecutive frames containing the blink rate below our predefined threshold. If the check passes, we increase the total number of flickers. Then we reset the COUNTER number of successive flickers.  
+      
+At the same time, it provides the code of off-line comparison, which needs to be improved. It combines blink recognition with real-time face comparison.
+
+# Chinese instructions
 基于Dlib的人脸签到系统  
 基于机器学习/深度学习框架Dlib、OpenCV库实现人脸签到系统。  
 实验平台：Pycharm。  
